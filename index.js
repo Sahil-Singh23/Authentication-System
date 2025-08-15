@@ -3,7 +3,9 @@ const path = require("path");
 const jwt = require("jsonwebtoken");
 
 const app = express();
-const JWT_SECRET = "HELLOSAHILSINGH";
+
+require("dotenv").config();
+const jwtSecret = process.env.JWT_SECRET;
 
 let users = [];
 
