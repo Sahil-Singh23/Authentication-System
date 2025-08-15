@@ -22,12 +22,9 @@
           usernameDiv.innerHTML = "Usename : " + username;
           var emailDiv = document.createElement("div");
           emailDiv.innerHTML = "Email : " + email;
-          var passwordDiv = document.createElement("div");
-          passwordDiv.innerHTML = "Password : " + password;
 
           mainDiv.appendChild(usernameDiv);
           mainDiv.appendChild(emailDiv);
-          mainDiv.appendChild(passwordDiv);
         } catch (error) {
           console.error("Error loading user info:", error);
         }

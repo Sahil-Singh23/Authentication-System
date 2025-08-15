@@ -3,7 +3,6 @@ const path = require("path");
 const jwt = require("jsonwebtoken");
 
 const app = express();
-
 require("dotenv").config();
 const jwtSecret = process.env.JWT_SECRET;
 
@@ -76,7 +75,6 @@ app.get("/me", auth, (req, res) => {
     res.json({
       username: user.username,
       email: user.email,
-      password: user.password,
     });
   } else {
     res.status(403).json({ message: "user not found " });
