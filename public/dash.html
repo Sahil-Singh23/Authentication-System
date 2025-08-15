@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+      async function loadInfo() {
+        try {
+          const response = await axios.get("http://localhost:3000/me", {
+            headers: {
+              token: localStorage.getItem("token"),
+            },
+          });
+          const username = response.data.username;
+          const email = response.data.email;
+          const password = response.data.password;
+          const mainDiv = document.getElementById("userInfo");
+          mainDiv.innerHTML = "";
+          var usernameDiv = document.createElement("div");
+          usernameDiv.innerHTML = "Usename : " + username;
+          var emailDiv = document.createElement("div");
+          emailDiv.innerHTML = "Email : " + email;
+          var passwordDiv = document.createElement("div");
+          passwordDiv.innerHTML = "Password : " + password;
+
+          mainDiv.appendChild(usernameDiv);
+          mainDiv.appendChild(emailDiv);
+          mainDiv.appendChild(passwordDiv);
+        } catch (error) {
+          console.error("Error loading user info:", error);
+        }
+      }
+      loadInfo();
+    </script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Arial", sans-serif;
+        background: #ffffff;
+        min-height: 100vh;
+        color: #000000;
+      }
+
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 40px;
+        background: #000000;
+        border-bottom: 1px solid #e0e0e0;
+      }
+
+      .logo {
+        font-size: 24px;
+        font-weight: bold;
+        color: #ffffff;
+      }
+
+      .dashboard-container {
+        display: flex;
+        max-width: 1200px;
+        margin: 40px auto;
+        gap: 40px;
+        padding: 0 20px;
+      }
+
+      .profile-card {
+        background: #ffffff;
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+        padding: 40px;
+        flex: 1;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .rank-badge {
+        background: #000000;
+        color: #ffffff;
+        padding: 8px 16px;
+        border-radius: 4px;
+        font-size: 14px;
+        font-weight: bold;
+        display: inline-block;
+        margin-bottom: 20px;
+      }
+
+      .profile-title {
+        font-size: 32px;
+        font-weight: bold;
+        margin-bottom: 10px;
+        color: #000000;
+      }
+
+      .profile-subtitle {
+        color: #666666;
+        margin-bottom: 30px;
+      }
+
+      .info-section {
+        background: #ffffff;
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+        padding: 30px;
+        flex: 0.6;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .info-title {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: #000000;
+      }
+
+      .loading {
+        text-align: center;
+        color: #666666;
+      }
+
+      #userInfo div {
+        margin-bottom: 20px;
+        padding: 16px 0;
+        border-bottom: 1px solid #e0e0e0;
+        font-size: 18px;
+        font-family: "Helvetica Neue", -apple-system, BlinkMacSystemFont,
+          "Segoe UI", sans-serif;
+        font-weight: 300;
+        color: #333333;
+        text-align: left;
+        letter-spacing: 0.5px;
+      }
+
+      #userInfo div:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+      }
+
+      #userInfo div:before {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="logo"><i class="fas fa-user-circle"></i> Dashboard</div>
+    </nav>
+
+    <div class="dashboard-container">
+      <div class="profile-card">
+        <div class="rank-badge"><i class="fas fa-star"></i> USER</div>
+        <div class="profile-title" id="welcomeText">Welcome Back!</div>
+        <div class="profile-subtitle">
+          Manage your account information and settings
+        </div>
+      </div>
+
+      <div class="info-section">
+        <div class="info-title">
+          <i class="fas fa-info-circle"></i>
+          ACCOUNT INFO
+        </div>
+
+        <div id="userInfo" class="loading">
+          <i class="fas fa-spinner fa-spin"></i> Loading user information...
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,189 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 20px;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.wrapper {
+  max-width: 400px;
+  width: 100%;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  padding: 40px 30px;
+  text-align: center;
+}
+
+.icon-container {
+  margin-bottom: 24px;
+}
+
+.app-icon {
+  width: 64px;
+  height: 64px;
+  background: #6c757d;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  color: white;
+  font-size: 24px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #6c757d;
+  margin-bottom: 32px;
+}
+
+.wrapper form .row {
+  margin-bottom: 16px;
+  position: relative;
+}
+
+.wrapper form .row input {
+  width: 100%;
+  height: 48px;
+  outline: none;
+  padding: 0 16px;
+  border-radius: 8px;
+  border: 1.5px solid #e1e5e9;
+  font-size: 14px;
+  background: #f8f9fa;
+  transition: all 0.3s ease;
+}
+
+.wrapper form .row input:focus {
+  border-color: #000;
+  background: #fff;
+}
+
+.wrapper form .row input::placeholder {
+  color: #9ca3af;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #9ca3af;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.wrapper form .button input {
+  width: 100%;
+  height: 48px;
+  background: #000;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 24px;
+}
+
+.wrapper form .button input:hover {
+  background: #333;
+}
+
+.divider {
+  font-size: 12px;
+  color: #9ca3af;
+  margin: 24px 0 20px 0;
+  position: relative;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 45%;
+  height: 1px;
+  background: #e1e5e9;
+}
+
+.divider::before {
+  left: 0;
+}
+
+.divider::after {
+  right: 0;
+}
+
+.social-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.social-btn {
+  width: 48px;
+  height: 48px;
+  border: 1.5px solid #e1e5e9;
+  border-radius: 8px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 18px;
+}
+
+.social-btn:hover {
+  border-color: #000;
+  background: #f8f9fa;
+}
+
+.social-btn.google {
+  color: #4285f4;
+}
+
+.social-btn.facebook {
+  color: #1877f2;
+}
+
+.social-btn.apple {
+  color: #000;
+}
+
+.signup-link {
+  font-size: 14px;
+  color: #6c757d;
+}
+
+.signup-link a {
+  color: #000;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.signup-link a:hover {
+  text-decoration: underline;
+}
