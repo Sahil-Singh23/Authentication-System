@@ -8,7 +8,7 @@
     <script>
       async function loadInfo() {
         try {
-          const response = await axios.get("http://localhost:3000/me", {
+          const response = await axios.get("/me", {
             headers: {
               token: localStorage.getItem("token"),
             },

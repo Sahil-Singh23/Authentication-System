@@ -7,7 +7,7 @@ function signup() {
     return;
   }
   axios
-    .post("http://localhost:3000/signup", {
+    .post("/signup", {
       username: username,
       email: email,
       password: password,
@@ -44,7 +44,7 @@ async function signin() {
     return;
   }
   try {
-    const response = await axios.post("http://localhost:3000/signin", {
+    const response = await axios.post("/signin", {
       username: username,
       password: password,
     });
